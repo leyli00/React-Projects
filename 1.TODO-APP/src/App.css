@@ -41,6 +41,7 @@
 .todo-elements{
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   border: 2px solid blue;
   width: 500px;
