@@ -1,0 +1,21 @@
+.sidebar {
+    min-width: 250px;
+    padding-top: 10px;
+    background: #fff;
+    height: 100vh;
+}
+
+.sidebar>hr {
+    height: 1px;
+    border: 0;
+    background-color: lightgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        z-index: 1000;
+        position: fixed;
+    }
+}

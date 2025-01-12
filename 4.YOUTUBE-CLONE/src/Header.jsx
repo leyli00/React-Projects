@@ -7,9 +7,9 @@ import VideoCallIcon from '@mui/icons-material/VideoCall';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
-function Header(){
+function Header({ toggleSidebar }) {
 
     const [searchQuery, setSearchQuery] = useState('');
     const [showSearch, setShowSearch] = useState(false);
@@ -20,44 +20,45 @@ function Header(){
         const handleMediaChange = () => setIsSmallScreen(mediaQuery.matches);
         handleMediaChange();
         mediaQuery.addEventListener('change', handleMediaChange);
-        return()=> mediaQuery.removeEventListener('change', handleMediaChange);
+        return () => mediaQuery.removeEventListener('change', handleMediaChange);
     }, [])
 
     return (
         <div className="header">
-            { !showSearch && (
+            {!showSearch && (
                 <div className="header-left">
-                    <MenuIcon/>
+                    <MenuIcon onClick={toggleSidebar} />
                     <Link to={'/'}>
                         <img src={logo} alt="Header Logo" className='header-logo' />
                     </Link>
                 </div>
             )}
-            <div className='search-input' style={{flex: isSmallScreen && showSearch ? 1 : isSmallScreen && 0, 
-                display: isSmallScreen && showSearch ? 'flex' : isSmallScreen && 'none', 
+            <div className='search-input' style={{
+                flex: isSmallScreen && showSearch ? 1 : isSmallScreen && 0,
+                display: isSmallScreen && showSearch ? 'flex' : isSmallScreen && 'none',
                 margin: 'auto'
             }} >
                 <input type="text" placeholder='Search' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                 <Link to={`/search/${searchQuery}`}>
-                    <SearchIcon className='search-icon'/>
+                    <SearchIcon className='search-icon' />
                 </Link>
             </div>
-            {showSearch && (<CloseIcon className="close-btn" onClick={() => setShowSearch(false)}  />)}
+            {showSearch && (<CloseIcon className="close-btn" onClick={() => setShowSearch(false)} />)}
 
             {!showSearch && (
                 <div className='header-icons'>
-                {isSmallScreen && !showSearch && (
-                    <SearchIcon
-                        className='searchToggle-icon header-icon'
-                        onClick = { () => {
-                            setShowSearch(true);
-                        }} 
+                    {isSmallScreen && !showSearch && (
+                        <SearchIcon
+                            className='searchToggle-icon header-icon'
+                            onClick={() => {
+                                setShowSearch(true);
+                            }}
                         />
-                )}
-                <VideoCallIcon className='header-icon'/>
-                <NotificationsIcon className='header-icon'/>
-                <AccountCircleIcon className='header-icon'/>
-            </div>
+                    )}
+                    <VideoCallIcon className='header-icon' />
+                    <NotificationsIcon className='header-icon' />
+                    <AccountCircleIcon className='header-icon' />
+                </div>
             )}
         </div>
     )

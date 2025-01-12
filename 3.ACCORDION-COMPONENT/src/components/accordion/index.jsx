@@ -24,6 +24,7 @@ export default function Accordion() {
         else cpyMultiple.splice(findIndexOfCurrentId, 1);
 
         setMultiple(cpyMultiple);
+
     }
 
     console.log(selected, multiple);
@@ -47,10 +48,10 @@ export default function Accordion() {
                                 <span>+</span>
                             </div>
                             {
-                                enableMultiSelection ? 
-                                multiple.indexOf(dataItem.id) !== -1 && 
-                                <div className="content"> {dataItem.answer} </div> : 
-                                selected === dataItem.id && <div className="content"> {dataItem.answer} </div>
+                                enableMultiSelection ?
+                                    multiple.indexOf(dataItem.id) !== -1 &&
+                                    <div className="content"> {dataItem.answer} </div> :
+                                    selected === dataItem.id && <div className="content"> {dataItem.answer} </div>
                             }
                             {/* {
                                 selected === dataItem.id || multiple.indexOf(dataItem.id) !== -1 ? (
