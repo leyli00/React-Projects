@@ -3,7 +3,7 @@ import './HomeVideos.css'
 import VideoCard from './VideoCard';
 import SkeletonLoader from './SkeletonLoader';
 
-function HomeVideos() {
+function TrendingVideos() {
 
     const [page, setPage] = useState(1);
     const [videos, setVideos] = useState([]);
@@ -16,7 +16,7 @@ function HomeVideos() {
             setLoading(true);
             try {
                 const response = await fetch(
-                    `http://localhost:3000/videos?_page=${page}&_limit=5`
+                    `http://localhost:3000/videos?_page=${page}&_limit=5&_sort=-views`
                 );
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -60,7 +60,7 @@ function HomeVideos() {
 
     return (
         <div className='home-videos'>
-            <h2>Recommended</h2>
+            <h2>Trending</h2>
             <div className='homeVideoItem'>
                 {
                     videos.map(item => {
@@ -80,5 +80,5 @@ function HomeVideos() {
     );
 }
 
-export default HomeVideos
+export default TrendingVideos
 

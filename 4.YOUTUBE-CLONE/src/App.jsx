@@ -4,6 +4,7 @@ import Header from './Header'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import HomeVideos from './HomeVideos';
+import TrendingVideos from './TrendingVideos';
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <div style={{ width: '100%' }}>
           <Routes>
             <Route path='/' element={<HomeVideos />} />
+            <Route path='/trending' element={<TrendingVideos />} />
             <Route path='/search/:searchQuery' element={<>Search Results</>} />
           </Routes>
         </div>
