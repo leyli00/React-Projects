@@ -51,7 +51,7 @@ function HomeVideos() {
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
-    if (loading) {
+    if (loading && page === 1) {
         return <SkeletonLoader />
     }
     if (error) {
@@ -74,6 +74,7 @@ function HomeVideos() {
                             path={`/videoplaypage/${item.id}`} />
                     })
                 }
+                {loading && page !== 1 && <SkeletonLoader />}
 
             </div>
         </div>

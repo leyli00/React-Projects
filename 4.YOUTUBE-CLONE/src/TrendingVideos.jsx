@@ -16,7 +16,7 @@ function TrendingVideos() {
             setLoading(true);
             try {
                 const response = await fetch(
-                    `http://localhost:3000/videos?_page=${page}&_limit=5&_sort=-views`
+                    `http://localhost:3000/videos?_page=${page}&_limit=5&_sort=-viewsCount`
                 );
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -51,7 +51,7 @@ function TrendingVideos() {
         return () => window.removeEventListener('scroll', handleScroll);
     });
 
-    if (loading) {
+    if (loading && page === 1) {
         return <SkeletonLoader />
     }
     if (error) {
@@ -74,6 +74,7 @@ function TrendingVideos() {
                             path={`/videoplaypage/${item.id}`} />
                     })
                 }
+                {loading && page !== 1 && <SkeletonLoader />}
 
             </div>
         </div>
