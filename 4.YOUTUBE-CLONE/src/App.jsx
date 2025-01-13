@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import HomeVideos from './HomeVideos';
 import TrendingVideos from './TrendingVideos';
 import SearchPage from './SearchPage';
+import VideoPlayPage from './VideoplayPage';
 
 
 
@@ -46,6 +47,7 @@ function App() {
             <Route path='/' element={<HomeVideos />} />
             <Route path='/trending' element={<TrendingVideos />} />
             <Route path='/search/:searchQuery' element={<SearchPage />} />
+            <Route path='/videoplaypage/:videoId' element={<VideoPlayPage />} />
           </Routes>
         </div>
 
