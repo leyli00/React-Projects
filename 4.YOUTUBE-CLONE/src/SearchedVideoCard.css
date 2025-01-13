@@ -1,0 +1,38 @@
+.searchedVideoCard {
+    display: flex;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.searchedVideoCard>img {
+    object-fit: contain;
+    width: 246px;
+    height: 138px;
+}
+
+.searchedVideoCardText {
+    margin-left: 14px;
+}
+
+.searchedVideoCardDescription {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #606060;
+}
+
+.searchedVideoCardHeadline {
+    font-size: 12px;
+    color: #404040;
+}
+
+.searchedVideoCardSubs {
+    background-color: lightgray;
+    padding: 2px;
+    margin-left: 3px;
+    margin-right: 4px;
+}
+
+.searchedVideoCardSubsNum {
+    font-weight: bolder;
+    color: rgb(84, 157, 210);
+}

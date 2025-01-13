@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import HomeVideos from './HomeVideos';
 import TrendingVideos from './TrendingVideos';
+import SearchPage from './SearchPage';
 
 
 
@@ -44,7 +45,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomeVideos />} />
             <Route path='/trending' element={<TrendingVideos />} />
-            <Route path='/search/:searchQuery' element={<>Search Results</>} />
+            <Route path='/search/:searchQuery' element={<SearchPage />} />
           </Routes>
         </div>
 
