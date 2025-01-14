@@ -50,18 +50,23 @@ export default function VideoPlayPage() {
                 </div>
                 <div className="infos">
                     <div className="channelCover">
+
                         <div className="channelInfo">
-                            <img className='channelAvatar' src={video.channelImage} alt="" />
-                            <div className="channelText">
-                                <h4> {video.channel} </h4>
-                                <p>1000 Subscribers</p>
+                            <div className="channelAvatarTextWrapperDiv">
+                                <img className='channelAvatar' src={video.channelImage} alt="" />
+                                <div className="channelText">
+                                    <h4> {video.channel} </h4>
+                                    <p>1000 Subscribers</p>
+                                </div>
                             </div>
+
                             <p className='sbsBtn'>SUBSCRIBE</p>
                         </div>
+
                         <div className="commentsSection">
                             <h2 className="commentHeader">Comments</h2>
                             <div className="commentInput">
-                                <img src="https://via.placeholder.com/40" alt="" className="avatar" />
+                                <img src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U" alt="" className="avatar" />
                                 <textarea placeholder='Add a comment...' className="commentBox"></textarea>
                             </div>
                             <div className="commentsList">
