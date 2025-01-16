@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333;
+    color: hsl(200, 100%, 90%);
+}
+
+.todo-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container {
+    width: 500px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-header {
+    font-size: 20px;
+}
+
+.new-todo {
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px 8px;
+    border: 1px solid hsl(200, 100%, 40%);
+    background: hsl(200, 100%, 30%);
+    color: hsl(200, 100%, 90%);
+    outline: none;
+}
+
+.new-todo:focus {
+    border: 1px solid hsl(200, 100%, 70%);
+}
+
+/* .list-container {
+    display: flex;
+    flex-direction: row;
+} */
+
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.item {
+    list-style: none;
+    font-size: 18px;
+}
+
+#checkbox {
+    height: 17px;
+    width: 17px;
+    border: 1px solid red;
+}
+
+.btn {
+    border-radius: 5px;
+    cursor: pointer;
+    background: hsl(200, 100%, 50%, 0.1);
+    border: 1px solid hsl(200, 100%, 50%);
+    color: hsl(200, 100%, 50%);
+    padding: 5px 8px;
+}
+
+.btn-delete {
+    background: hsl(0, 100%, 40%, 0.1);
+    border: 1px solid hsl(0, 100%, 40%);
+    color: hsl(0, 100%, 40%);
+    border-radius: 3px;
+    margin-left: 10px;
+}
